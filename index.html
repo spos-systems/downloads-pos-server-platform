@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SPOS صولة — سيرفر المؤسسات | التحميل</title>
+<meta name="description" content="السيرفر الرئيسي لمنظومة صولة للمؤسسات — مثبّت أحادي الملف: قاعدة بيانات + لوحة إدارة عربية + تطبيق هاتف + نفق آمن. ترخيص دائم ومحطات بلا حد.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23f59e0b'/%3E%3Cstop offset='1' stop-color='%23b45309'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='512' height='512' rx='120' fill='%230f172a'/%3E%3Crect x='56' y='56' width='400' height='400' rx='96' fill='url(%23g)'/%3E%3Ctext x='256' y='348' font-family='Arial' font-size='280' font-weight='800' fill='white' text-anchor='middle'%3ES%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@400;500;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#0f172a; --ink2:#1e293b; --ink3:#0b1220;
+  --paper:#f6f8fb; --card:#ffffff;
+  --amber:#f59e0b; --amber2:#b45309; --amber-soft:#fef3c7;
+  --muted:#5b6b82; --line:#e4e9f1;
+  --green:#16a34a; --radius:18px;
+  --shadow:0 1px 2px rgba(15,23,42,.05),0 8px 28px rgba(15,23,42,.07);
+  --shadow-lg:0 2px 6px rgba(15,23,42,.08),0 18px 50px rgba(15,23,42,.14);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Noto Kufi Arabic','Segoe UI',Tahoma,Arial,sans-serif;background:var(--paper);color:var(--ink);line-height:1.75;-webkit-font-smoothing:antialiased}
+code,.ltr{direction:ltr;unicode-bidi:embed;font-family:ui-monospace,'Cascadia Code',Consolas,monospace}
+.wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+
+/* ===== Header ===== */
+header{position:sticky;top:0;z-index:50;background:rgba(15,23,42,.92);backdrop-filter:blur(10px);border-bottom:1px solid rgba(245,158,11,.18)}
+.nav{display:flex;align-items:center;gap:28px;padding:14px 0}
+.brand{display:flex;align-items:center;gap:12px;color:#fff;text-decoration:none}
+.brand .mark{width:42px;height:42px;border-radius:11px;background:linear-gradient(135deg,var(--amber),var(--amber2));display:grid;place-items:center;font-weight:800;font-size:22px;color:#fff;box-shadow:0 4px 14px rgba(245,158,11,.35)}
+.brand b{font-size:17px;font-weight:800}
+.brand small{display:block;font-size:11px;color:#94a3b8;font-weight:500;line-height:1.3}
+.nav-links{display:flex;gap:22px;margin-inline-start:auto;align-items:center}
+.nav-links a{color:#cbd5e1;text-decoration:none;font-size:14px;font-weight:500;transition:color .2s}
+.nav-links a:hover{color:var(--amber)}
+.support-chip{display:inline-flex;align-items:center;gap:8px;background:rgba(245,158,11,.14);border:1px solid rgba(245,158,11,.4);color:#fbbf24!important;padding:8px 16px;border-radius:999px;font-size:13.5px!important;font-weight:700}
+@media(max-width:860px){.nav-links a:not(.support-chip){display:none}}
+
+/* ===== Hero ===== */
+.hero{background:radial-gradient(1100px 500px at 85% -10%,rgba(245,158,11,.16),transparent 60%),radial-gradient(900px 500px at 10% 110%,rgba(245,158,11,.08),transparent 55%),var(--ink);color:#fff;padding:78px 0 92px;position:relative;overflow:hidden}
+.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center}
+@media(max-width:900px){.hero-grid{grid-template-columns:1fr}}
+.chip{display:inline-flex;align-items:center;gap:8px;background:rgba(245,158,11,.12);border:1px solid rgba(245,158,11,.35);color:#fbbf24;font-size:13px;font-weight:700;padding:7px 16px;border-radius:999px;margin-bottom:22px}
+.chip .dot{width:8px;height:8px;border-radius:50%;background:var(--green);box-shadow:0 0 0 4px rgba(22,163,74,.18)}
+h1{font-size:clamp(28px,4.4vw,42px);font-weight:800;line-height:1.35;margin-bottom:16px}
+h1 .gold{background:linear-gradient(120deg,#fbbf24,#f59e0b,#d97706);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p.lead{color:#b6c2d6;font-size:16.5px;max-width:56ch;margin-bottom:8px}
+.hero .promise{display:flex;flex-wrap:wrap;gap:10px;margin:20px 0 30px}
+.promise span{display:inline-flex;align-items:center;gap:7px;font-size:13px;font-weight:600;color:#e2e8f0;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);padding:7px 14px;border-radius:999px}
+.promise svg{color:var(--amber);flex:none}
+
+.cta-row{display:flex;flex-wrap:wrap;gap:14px;align-items:stretch}
+.btn{display:inline-flex;align-items:center;gap:10px;border-radius:14px;padding:15px 28px;font-size:16px;font-weight:800;text-decoration:none;transition:transform .15s,box-shadow .15s;cursor:pointer;border:none;font-family:inherit}
+.btn-primary{background:linear-gradient(135deg,#fbbf24,#f59e0b 55%,#ea8a0a);color:#231303;box-shadow:0 10px 30px rgba(245,158,11,.35)}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 16px 40px rgba(245,158,11,.45)}
+.btn-ghost{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.18);color:#e2e8f0;font-weight:700}
+.btn-ghost:hover{border-color:rgba(245,158,11,.5);color:#fbbf24}
+.btn small{display:block;font-size:11.5px;font-weight:600;opacity:.75}
+
+/* terminal */
+.terminal{background:var(--ink3);border:1px solid #24324a;border-radius:var(--radius);box-shadow:var(--shadow-lg);overflow:hidden;direction:ltr;text-align:left}
+.term-bar{display:flex;align-items:center;gap:8px;padding:12px 16px;background:#111b2e;border-bottom:1px solid #24324a}
+.term-bar i{width:11px;height:11px;border-radius:50%;display:block}
+.term-bar .t{margin-left:10px;font-size:12px;color:#7c8aa5;font-family:ui-monospace,Consolas,monospace}
+.term-body{padding:18px 18px 8px;font-size:13.5px;line-height:2;color:#d7e0ee;font-family:ui-monospace,'Cascadia Code',Consolas,monospace;overflow-x:auto}
+.term-body .p{color:var(--amber);user-select:none}
+.term-body .c{color:#64748b}
+.copy-row{display:flex;justify-content:flex-end;padding:10px 14px 14px}
+.copy-btn{display:inline-flex;align-items:center;gap:7px;background:#1a2740;border:1px solid #2c3c5a;color:#cbd5e1;font-size:12.5px;font-weight:700;padding:8px 16px;border-radius:9px;cursor:pointer;font-family:'Noto Kufi Arabic',sans-serif;transition:all .2s}
+.copy-btn:hover{border-color:var(--amber);color:#fbbf24}
+.copy-btn.done{background:rgba(22,163,74,.15);border-color:var(--green);color:#4ade80}
+.hero-note{margin-top:16px;font-size:13px;color:#8b99b0}
+.hero-note b{color:#cbd5e1}
+
+/* ===== Sections ===== */
+section{padding:72px 0}
+.sec-head{text-align:center;max-width:640px;margin:0 auto 44px}
+.sec-head .kicker{display:inline-block;color:var(--amber2);background:var(--amber-soft);font-size:13px;font-weight:800;padding:6px 18px;border-radius:999px;margin-bottom:14px}
+.sec-head h2{font-size:clamp(23px,3.2vw,31px);font-weight:800;margin-bottom:10px}
+.sec-head p{color:var(--muted);font-size:15.5px}
+
+/* features */
+.features{background:linear-gradient(180deg,#fff, var(--paper))}
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+@media(max-width:900px){.grid-3{grid-template-columns:1fr 1fr}}
+@media(max-width:620px){.grid-3,.grid-2{grid-template-columns:1fr}}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:26px 24px;box-shadow:var(--shadow)}
+.f-ico{width:52px;height:52px;border-radius:14px;background:linear-gradient(135deg,#fffbeb,#fef3c7);border:1px solid #fde68a;display:grid;place-items:center;color:var(--amber2);margin-bottom:16px}
+.card h3{font-size:16.5px;font-weight:800;margin-bottom:8px}
+.card p{font-size:14px;color:var(--muted)}
+
+/* steps */
+.steps{counter-reset:step}
+.step{display:flex;gap:20px;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:24px;margin-bottom:16px;box-shadow:var(--shadow);position:relative}
+.step .n{counter-increment:step;flex:none;width:46px;height:46px;border-radius:13px;background:linear-gradient(135deg,var(--amber),var(--amber2));color:#fff;font-weight:800;font-size:20px;display:grid;place-items:center;box-shadow:0 6px 16px rgba(245,158,11,.3)}
+.step .n::before{content:counter(step)}
+.step h3{font-size:17px;font-weight:800;margin-bottom:6px}
+.step p{font-size:14.5px;color:var(--muted)}
+.step a{color:var(--amber2);font-weight:700;text-decoration:none;border-bottom:2px solid #fde68a}
+.step a:hover{border-color:var(--amber)}
+.step .cmd{margin-top:10px;background:var(--ink3);color:#e2e8f0;border-radius:10px;padding:10px 14px;font-size:12.5px;overflow-x:auto;direction:ltr;text-align:left}
+
+/* downloads */
+.dl-card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden;margin-bottom:16px}
+.dl-main{display:flex;align-items:center;gap:18px;padding:22px 24px;flex-wrap:wrap}
+.dl-ico{width:54px;height:54px;border-radius:14px;display:grid;place-items:center;flex:none}
+.dl-ico.sh{background:linear-gradient(135deg,#fff7e0,#fde68a);color:var(--amber2);border:1px solid #fcd34d}
+.dl-ico.zip{background:#eef2f8;color:#3b5b88;border:1px solid #dbe4f0}
+.dl-info{flex:1;min-width:220px}
+.dl-info h3{font-size:16.5px;font-weight:800}
+.dl-info .meta{display:flex;flex-wrap:wrap;gap:14px;font-size:12.5px;color:var(--muted);margin-top:4px}
+.dl-info .meta b{color:var(--ink2)}
+.dl-btn{display:inline-flex;align-items:center;gap:9px;background:linear-gradient(135deg,#fbbf24,#f59e0b 55%,#ea8a0a);color:#231303;font-weight:800;font-size:15px;padding:13px 26px;border-radius:12px;text-decoration:none;box-shadow:0 8px 22px rgba(245,158,11,.3);transition:transform .15s}
+.dl-btn:hover{transform:translateY(-2px)}
+.dl-btn.alt{background:#fff;border:1.5px solid #cbd5e1;color:var(--ink2);box-shadow:var(--shadow)}
+.dl-btn.alt:hover{border-color:var(--amber)}
+.dl-sha{display:flex;align-items:center;gap:12px;padding:12px 24px;background:#f8fafc;border-top:1px dashed var(--line);font-size:12px;color:var(--muted);flex-wrap:wrap}
+.dl-sha code{font-size:11.5px;color:#3b5b88;background:#eef2f8;padding:3px 10px;border-radius:7px;word-break:break-all}
+.mini-copy{display:inline-flex;align-items:center;gap:6px;background:#fff;border:1px solid var(--line);color:var(--muted);font-size:11.5px;font-weight:700;padding:5px 12px;border-radius:8px;cursor:pointer;font-family:inherit;transition:all .2s}
+.mini-copy:hover{border-color:var(--amber);color:var(--amber2)}
+.mini-copy.done{border-color:var(--green);color:var(--green)}
+
+/* requirements */
+.req{display:flex;gap:16px;align-items:flex-start}
+.req .r-ico{width:44px;height:44px;border-radius:12px;background:var(--ink);color:var(--amber);display:grid;place-items:center;flex:none}
+
+/* faq */
+.faq details{background:var(--card);border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow);margin-bottom:12px;overflow:hidden}
+.faq summary{list-style:none;display:flex;justify-content:space-between;align-items:center;gap:14px;padding:19px 22px;font-weight:800;font-size:15.5px;cursor:pointer}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary .plus{flex:none;width:26px;height:26px;border-radius:8px;background:var(--amber-soft);color:var(--amber2);display:grid;place-items:center;font-weight:800;transition:transform .25s}
+.faq details[open] .plus{transform:rotate(45deg)}
+.faq .a{padding:0 22px 20px;color:var(--muted);font-size:14.5px}
+.faq .a b{color:var(--ink2)}
+
+/* footer */
+footer{background:var(--ink);color:#94a3b8;padding:56px 0 32px;margin-top:40px}
+.f-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:36px;margin-bottom:40px}
+@media(max-width:800px){.f-grid{grid-template-columns:1fr}}
+footer h4{color:#fff;font-size:15px;font-weight:800;margin-bottom:14px}
+footer a{color:#94a3b8;text-decoration:none;font-size:14px;display:block;margin-bottom:9px;transition:color .2s}
+footer a:hover{color:var(--amber)}
+.f-brand{display:flex;align-items:center;gap:12px;margin-bottom:14px}
+.f-brand .mark{width:44px;height:44px;border-radius:12px;background:linear-gradient(135deg,var(--amber),var(--amber2));display:grid;place-items:center;font-weight:800;font-size:22px;color:#fff}
+.f-brand b{color:#fff;font-size:16px}
+.f-bottom{border-top:1px solid #1e293b;padding-top:24px;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;font-size:13px}
+.f-contact{display:flex;flex-direction:column;gap:8px}
+.f-contact a{display:flex;align-items:center;gap:9px;margin-bottom:0}
+.f-contact svg{color:var(--amber)}
+
+/* reveal */
+.rv{opacity:0;transform:translateY(22px);transition:opacity .6s ease,transform .6s ease}
+.rv.on{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}}
+</style>
+</head>
+<body>
+
+<!-- ===================== Header ===================== -->
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#">
+      <span class="mark">S</span>
+      <span><b>صولة SPOS</b><small>سيرفر المؤسسات — التحميلات</small></span>
+    </a>
+    <nav class="nav-links">
+      <a href="#features">المزايا</a>
+      <a href="#install">التركيب</a>
+      <a href="#downloads">التحميل</a>
+      <a href="#faq">الأسئلة</a>
+      <a class="support-chip" href="tel:0935535606">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        الدعم 0935535606
+      </a>
+    </nav>
+  </div>
+</header>
+
+<!-- ===================== Hero ===================== -->
+<div class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="chip"><span class="dot"></span> الإصدار 1.0.1 — مستقر ومجرّب</span>
+      <h1>السيرفر الرئيسي لمنظومة <span class="gold">صولة</span> للمؤسسات</h1>
+      <p class="lead">سيرفر الفرع كاملاً في <b>مثبّت أحادي الملف</b>: قاعدة بيانات PostgreSQL 17 ولوحة إدارة عربية وتطبيق هاتف ونفق آمن — على جهاز واحد عند الزبون، بأمر تركيب واحد.</p>
+      <div class="promise">
+        <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> ترخيص دائم — مرة واحدة للأبد</span>
+        <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> محطات كاشير بلا حد</span>
+        <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> بلا اشتراك شهري</span>
+      </div>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="https://github.com/spos-systems/downloads-pos-server-platform/releases/latest/download/SPOS-Solah-Enterprise-Setup.sh" download>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          <span>تحميل المثبّت الآن<small>ملف واحد — 117 كيلوبايت فقط</small></span>
+        </a>
+        <a class="btn btn-ghost" href="#install">
+          <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+          <span>كيف أركّبه؟<small>أمر واحد — أقل من 10 دقائق</small></span>
+        </a>
+      </div>
+      <p class="hero-note">يعمل على أي جهاز <b>Ubuntu / Debian</b> — حتى جهاز قديم بلا شاشة. الإنترنت مطلوب وقت التركيب فقط، والتشغيل بعدها <b>محلي بالكامل</b>.</p>
+    </div>
+
+    <div>
+      <div class="terminal">
+        <div class="term-bar">
+          <i style="background:#ff5f57"></i><i style="background:#febc2e"></i><i style="background:#28c840"></i>
+          <span class="t">Terminal — Ubuntu</span>
+        </div>
+        <div class="term-body">
+          <div><span class="p">$</span> curl -fsSL https://github.com/spos-systems/<br>&nbsp;&nbsp;&nbsp;&nbsp;downloads-pos-server-platform/releases/latest/download/<br>&nbsp;&nbsp;&nbsp;&nbsp;SPOS-Solah-Enterprise-Setup.sh -o spos-setup.sh</div>
+          <div><span class="p">$</span> sudo bash spos-setup.sh --license SPOS-ENTERPRISE-XXXXXXXX</div>
+          <div class="c">✓ فُكّت الملفات في /opt/spos</div>
+          <div class="c">✓ وُلّدت كلمات السر وحُفظت في .env</div>
+          <div class="c">✓ اكتمل التركيب — اللوحة تعمل الآن على منفذ 5150</div>
+        </div>
+        <div class="copy-row">
+          <button class="copy-btn" onclick="copyCmd(this)">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+            نسخ أمر التركيب
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===================== Features ===================== -->
+<section class="features" id="features">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="kicker">ماذا يحتوي الملف الواحد؟</span>
+      <h2>كل شيء يشتغل تلقائياً — بلا إعداد يدوي</h2>
+      <p>المثبّت يفحص جهازك، يثبّت ما يلزم، يولّد كلمات السر، ويشغّل المنظومة كاملة ثم يسلّمك العنوان وكلمة السر.</p>
+    </div>
+    <div class="grid-3">
+      <div class="card rv">
+        <div class="f-ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg></div>
+        <h3>قاعدة بيانات PostgreSQL 17</h3>
+        <p>مرفقة داخل الحزمة وتُهيّأ تلقائياً — بيانات الفرع كلها في جهاز الزبون، لا سحابة ولا وسيط.</p>
+      </div>
+      <div class="card rv">
+        <div class="f-ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg></div>
+        <h3>لوحة إدارة عربية كاملة</h3>
+        <p>المستخدمون والصلاحيات، المحطات، المبيعات والتقارير، النسخ الاحتياطي — كل الإدارة من المتصفح.</p>
+      </div>
+      <div class="card rv">
+        <div class="f-ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg></div>
+        <h3>تطبيق هاتف للمالك</h3>
+        <p>مبيعات اليوم والأسبوع والأعلى مبيعاً وحالة المحطات — لحظياً على هاتف المالك من داخل المحل أو خارجه.</p>
+      </div>
+      <div class="card rv">
+        <div class="f-ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/></svg></div>
+        <h3>نفق آمن https</h3>
+        <p>عنوان عام مشفّر يُفعّل فوراً — يصل إليه المالك والهاتف من خارج المحل دون كشف شبكة المحل.</p>
+      </div>
+      <div class="card rv">
+        <div class="f-ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
+        <h3>محطات كاشير بلا حد</h3>
+        <p>أضف محطات ويندوز ولينكس متى شئت — ترخيص المؤسسات بلا مقاعد ولا عدّاد، والمحطة تتبناه تلقائياً عند الاقتران.</p>
+      </div>
+      <div class="card rv">
+        <div class="f-ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg></div>
+        <h3>نسخ احتياطي تلقائي</h3>
+        <p>لقطة للقاعدة كل 6 ساعات مع استعادة بضغطة من اللوحة، ونسخة إضافية تلقائية قبل كل ترقية.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== Install steps ===================== -->
+<section id="install" style="background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="kicker">من الصفر إلى أول فاتورة</span>
+      <h2>التركيب في 3 خطوات</h2>
+      <p>لا فلاشة ولا ملفات متفرقة — جهاز لينكس نظيف واتصال إنترنت وقت التركيب فقط.</p>
+    </div>
+    <div class="steps">
+      <div class="step rv">
+        <div class="n"></div>
+        <div>
+          <h3>شغّل أمر التركيب على جهاز السيرفر</h3>
+          <p>أي جهاز Ubuntu/Debian نظيف — الجهاز القديم في المحل يكفي. انسخ الأمر والصقه في الطرفية (Terminal):</p>
+          <div class="cmd">curl -fsSL https://github.com/spos-systems/downloads-pos-server-platform/releases/latest/download/SPOS-Solah-Enterprise-Setup.sh -o spos-setup.sh<br>sudo bash spos-setup.sh --license SPOS-ENTERPRISE-XXXXXXXX</div>
+          <p>ينتهي بطباعة <b>عنوان اللوحة وكلمة سرها</b> — سجّلهما. (مع تخطي التفعيل مؤقتاً: احذف <span class="ltr">--license</span> وفعّله لاحقاً من اللوحة ← الترخيص.)</p>
+        </div>
+      </div>
+      <div class="step rv">
+        <div class="n"></div>
+        <div>
+          <h3>افتح اللوحة من أي متصفح في المحل</h3>
+          <p>على جهاز السيرفر أو أي جهاز على شبكة المحل: افتح العنوان المطبوع (مثل <span class="ltr">http://192.168.x.x:5150</span>)، سجّل الدخول، وتأكد أن الترخيص «فعّال — دائم بلا انتهاء». من اللوحة تعتمد المحطات وتدير كل شيء.</p>
+        </div>
+      </div>
+      <div class="step rv">
+        <div class="n"></div>
+        <div>
+          <h3>ثبّت محطات الكاشير واقرنها بالسيرفر</h3>
+          <p>حمّل حزم المحطات (ويندوز ولينكس) من <a href="https://github.com/spos-systems/downloads-pos-pc-platform" target="_blank" rel="noopener">مستودع محطات صولة</a>، ثم من المحطة: الإعدادات ← قاعدة البيانات والشبكة ← «وضع الجهاز الفرعي» ← يظهر السيرفر في <b>الاكتشاف التلقائي</b> ← «طلب اقتران» ← اعتماده من اللوحة — والمحطة تتبنى ترخيص المؤسسات الدائم تلقائياً.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== Downloads ===================== -->
+<section id="downloads">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="kicker">روابط مباشرة — بلا وسيط</span>
+      <h2>التحميلات</h2>
+      <p>الروابط الدائمة تتبع أحدث إصدار تلقائياً. كل ملف موقّع ببصمة SHA256 للتحقق من سلامته.</p>
+    </div>
+
+    <div class="dl-card rv">
+      <div class="dl-main">
+        <div class="dl-ico sh">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+        </div>
+        <div class="dl-info">
+          <h3>المثبّت أحادي الملف — SPOS Solah Enterprise Setup</h3>
+          <div class="meta"><span>الإصدار <b>1.0.1</b></span><span>الحجم <b>117 KB</b></span><span>Ubuntu / Debian</span><span>كل المنظومة مضمّنة فيه</span></div>
+        </div>
+        <a class="dl-btn" href="https://github.com/spos-systems/downloads-pos-server-platform/releases/latest/download/SPOS-Solah-Enterprise-Setup.sh" download>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          تحميل
+        </a>
+      </div>
+      <div class="dl-sha">
+        <span>SHA256:</span>
+        <code id="sha-setup">d6c647f144c9ce4baabf4d4ca7bd0d9fb662e1acc08b3b91576d1cd185a42a19</code>
+        <button class="mini-copy" onclick="copySha('sha-setup',this)">نسخ البصمة</button>
+      </div>
+    </div>
+
+    <div class="dl-card rv">
+      <div class="dl-main">
+        <div class="dl-ico zip">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+        </div>
+        <div class="dl-info">
+          <h3>حزمة المصدر — SPOS Solah Enterprise Server</h3>
+          <div class="meta"><span>الإصدار <b>1.0.1</b></span><span>الحجم <b>115 KB</b></span><span>للوكيل الفني — تركيب يدوي عبر install.sh</span></div>
+        </div>
+        <a class="dl-btn alt" href="https://github.com/spos-systems/downloads-pos-server-platform/releases/latest/download/SPOS-Solah-Enterprise-Server.zip" download>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          تحميل
+        </a>
+      </div>
+      <div class="dl-sha">
+        <span>SHA256:</span>
+        <code id="sha-zip">bac946c1f7d426a527a2322cebaa84eab7cb167b66980cdf31f45bff02943669</code>
+        <button class="mini-copy" onclick="copySha('sha-zip',this)">نسخ البصمة</button>
+      </div>
+    </div>
+
+    <div class="dl-card rv">
+      <div class="dl-main">
+        <div class="dl-ico zip">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+        </div>
+        <div class="dl-info">
+          <h3>ملف البصمات — SHA256SUMS</h3>
+          <div class="meta"><span>للتحقق: <b class="ltr">sha256sum -c SHA256SUMS.txt</b></span></div>
+        </div>
+        <a class="dl-btn alt" href="https://github.com/spos-systems/downloads-pos-server-platform/releases/latest/download/SHA256SUMS.txt" download>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          تحميل
+        </a>
+      </div>
+    </div>
+
+    <p class="rv" style="text-align:center;color:var(--muted);font-size:14px;margin-top:26px">
+      لتصفح كل الإصدارات: <a href="https://github.com/spos-systems/downloads-pos-server-platform/releases" target="_blank" rel="noopener" style="color:var(--amber2);font-weight:700">صفحة الإصدارات على GitHub</a>
+    </p>
+  </div>
+</section>
+
+<!-- ===================== Requirements ===================== -->
+<section style="background:#fff;border-top:1px solid var(--line)">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="kicker">قبل التركيب</span>
+      <h2>المتطلبات</h2>
+    </div>
+    <div class="grid-2">
+      <div class="card req rv">
+        <div class="r-ico"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
+        <div><h3>نظام التشغيل</h3><p>Ubuntu أو Debian نظيف (20.04 أو أحدث). لا يلزم خبرة لينكس — الأمر الواحد يقوم بكل شيء.</p></div>
+      </div>
+      <div class="card req rv">
+        <div class="r-ico"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><line x1="9" y1="1" x2="9" y2="4"/><line x1="15" y1="1" x2="15" y2="4"/><line x1="9" y1="20" x2="9" y2="23"/><line x1="15" y1="20" x2="15" y2="23"/><line x1="20" y1="9" x2="23" y2="9"/><line x1="20" y1="14" x2="23" y2="14"/><line x1="1" y1="9" x2="4" y2="9"/><line x1="1" y1="14" x2="4" y2="14"/></svg></div>
+        <div><h3>المواصفات</h3><p>معالج i3 وذاكرة 4GB تكفي لفرع كامل. الأهم قرص <b>SSD</b> — هو ما يصنع سرعة الفواتير.</p></div>
+      </div>
+      <div class="card req rv">
+        <div class="r-ico"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.55a11 11 0 0 1 14.08 0"/><path d="M1.42 9a16 16 0 0 1 21.16 0"/><path d="M8.53 16.11a6 6 0 0 1 6.95 0"/><line x1="12" y1="20" x2="12.01" y2="20"/></svg></div>
+        <div><h3>الشبكة</h3><p>إنترنت وقت التركيب فقط. بعده تعمل المنظومة محلياً داخل المحل — وانقطاع الإنترنت لا يوقف البيع.</p></div>
+      </div>
+      <div class="card req rv">
+        <div class="r-ico"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="15" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/><line x1="2" y1="13" x2="22" y2="13"/></svg></div>
+        <div><h3>الجهاز نفسه</h3><p>لا يحتاج شاشة ولا لوحة مفاتيح بعد التركيب — يوضع في رفّ وكل الإدارة من المتصفح والهاتف.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FAQ ===================== -->
+<section class="faq" id="faq">
+  <div class="wrap" style="max-width:820px">
+    <div class="sec-head rv">
+      <span class="kicker">أسئلة شائعة</span>
+      <h2>كل ما يسأله الزبائن</h2>
+    </div>
+    <details class="rv">
+      <summary>هل يعمل المحل بلا إنترنت؟ <span class="plus">+</span></summary>
+      <div class="a">نعم — بعد التركيب يعمل كل شيء <b>محلياً داخل شبكة المحل</b>: البيع والطباعة والتقارير والهاتف. يتوقف عند انقطاع الإنترنت فقط: النسخ الاحتياطي السحابي (إن فُعّل) والنبض مع خادم التراخيص — ويكملان تلقائياً عند العودة.</div>
+    </details>
+    <details class="rv">
+      <summary>كم محطة كاشير أستطيع إضافة؟ <span class="plus">+</span></summary>
+      <div class="a"><b>بلا حد</b> — ترخيص المؤسسات بلا مقاعد ولا عدّاد: أضف محطة اليوم أو بعد سنة بنفس خطوة الاقتران، دون أي ترخيص إضافي.</div>
+    </details>
+    <details class="rv">
+      <summary>ما قصة الترخيص — اشتراك أم مرة واحدة؟ <span class="plus">+</span></summary>
+      <div class="a">ترخيص مؤسسات واحد <b>يُشترى مرة واحدة ويعمل للأبد</b> — بلا اشتراك شهري ولا سنوي ولا مقاعد. يُفعّل بالمفتاح تلقائياً أثناء التركيب أو من اللوحة ← الترخيص.</div>
+    </details>
+    <details class="rv">
+      <summary>هل يعمل السيرفر على ويندوز؟ <span class="plus">+</span></summary>
+      <div class="a">السيرفر الرئيسي يعمل على <b>Ubuntu/Debian</b> — أي جهاز قديم يكفي ولا يحتاج شاشة. أما <b>محطات الكاشير</b> فعلى ويندوز ولينكس معاً من <a href="https://github.com/spos-systems/downloads-pos-pc-platform" target="_blank" rel="noopener" style="color:var(--amber2);font-weight:700">مستودع المحطات</a>.</div>
+    </details>
+    <details class="rv">
+      <summary>كيف أرقّي لاحقاً؟ وهل بياناتي بأمان؟ <span class="plus">+</span></summary>
+      <div class="a">أعد تشغيل <b>نفس ملف التثبيت</b> على نفس الجهاز — يأخذ نسخة احتياطية تلقائية للقاعدة قبل الترقية وكل بياناتك محفوظة. وللاطمئنان دائماً: لقطة احتياطية كل 6 ساعات مع استعادة بضغطة من اللوحة.</div>
+    </details>
+    <details class="rv">
+      <summary>انطفأ جهاز السيرفر أو أردت تغييره — ماذا يحدث؟ <span class="plus">+</span></summary>
+      <div class="a">أعد تشغيله والمحطات تلحق تلقائياً — لا شيء يُفقد. ولنقل السيرفر لجهاز آخر: ركّب عليه بنفس الأمر، استعد آخر لقطة احتياطية من اللوحة، ثم أعد تفعيل المفتاح (يرتبط ببصمة الجهاز الجديد عبر خادم التراخيص).</div>
+    </details>
+  </div>
+</section>
+
+<!-- ===================== Footer ===================== -->
+<footer>
+  <div class="wrap">
+    <div class="f-grid">
+      <div>
+        <div class="f-brand">
+          <span class="mark">S</span>
+          <span><b>منظومة صولة SPOS</b><br><span style="font-size:12.5px">للمحلات والمولات الكبيرة</span></span>
+        </div>
+        <p style="font-size:13.5px;line-height:1.9">سيرفر الفرع كاملاً في ملف واحد — قاعدة بيانات ولوحة إدارة عربية وتطبيق هاتف ونفق آمن ومحطات بلا حد. ترخيص دائم، والبيانات عند الزبون دائماً.</p>
+      </div>
+      <div>
+        <h4>التحميلات</h4>
+        <a href="https://github.com/spos-systems/downloads-pos-server-platform/releases" target="_blank" rel="noopener">سيرفر المؤسسات — الإصدارات</a>
+        <a href="https://github.com/spos-systems/downloads-pos-pc-platform" target="_blank" rel="noopener">محطات الكاشير (ويندوز/لينكس)</a>
+        <a href="https://github.com/spos-systems/downloads" target="_blank" rel="noopener">منظومة صولة السحابية</a>
+      </div>
+      <div>
+        <h4>الدعم الفني</h4>
+        <div class="f-contact">
+          <a href="tel:0935535606"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg> 0935535606</a>
+          <a href="https://wa.me/218935535606" target="_blank" rel="noopener"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg> واتساب +218 93 553 5606</a>
+          <a href="https://spos.ly" target="_blank" rel="noopener"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg> spos.ly</a>
+        </div>
+      </div>
+    </div>
+    <div class="f-bottom">
+      <span>© <span id="yr">2026</span> منظومة صولة SPOS — جميع الحقوق محفوظة</span>
+      <span>التحميلات الرسمية: github.com/spos-systems</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+const INSTALL_CMD = 'curl -fsSL https://github.com/spos-systems/downloads-pos-server-platform/releases/latest/download/SPOS-Solah-Enterprise-Setup.sh -o spos-setup.sh && sudo bash spos-setup.sh --license SPOS-ENTERPRISE-XXXXXXXX';
+function flash(btn, okText){
+  const old = btn.innerHTML;
+  btn.innerHTML = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> ' + okText;
+  btn.classList.add('done');
+  setTimeout(()=>{ btn.innerHTML = old; btn.classList.remove('done'); }, 1800);
+}
+function copyText(text, btn, okText){
+  (navigator.clipboard ? navigator.clipboard.writeText(text) : Promise.reject())
+    .then(()=>flash(btn, okText))
+    .catch(()=>{
+      const ta = document.createElement('textarea');
+      ta.value = text; ta.style.position='fixed'; ta.style.opacity='0';
+      document.body.appendChild(ta); ta.select();
+      try{ document.execCommand('copy'); flash(btn, okText); }catch(e){}
+      ta.remove();
+    });
+}
+function copyCmd(btn){ copyText(INSTALL_CMD, btn, 'تم النسخ'); }
+function copySha(id, btn){ copyText(document.getElementById(id).textContent.trim(), btn, 'تم النسخ'); }
+document.getElementById('yr').textContent = new Date().getFullYear();
+const io = new IntersectionObserver(es=>es.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('on'); io.unobserve(e.target); }}),{threshold:.12});
+document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
