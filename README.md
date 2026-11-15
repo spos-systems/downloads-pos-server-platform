@@ -37,13 +37,16 @@ sudo bash spos-setup.sh
 | حزمة المصدر (للوكيل) | https://github.com/spos-systems/downloads-pos-server-platform/releases/latest/download/SPOS-Solah-Enterprise-Server.zip |
 | البصمات | https://github.com/spos-systems/downloads-pos-server-platform/releases/latest/download/SHA256SUMS.txt |
 
-## v1.0.2 — أحدث إصدار
+## v1.0.3 — أحدث إصدار
 
 | الحزمة | الحجم | الرابط |
 | --- | --- | --- |
-| المثبّت أحادي الملف | 118 KB | https://github.com/spos-systems/downloads-pos-server-platform/releases/download/v1.0.2/SPOS-Solah-Enterprise-Setup-v1.0.2.sh |
-| حزمة المصدر | 118 KB | https://github.com/spos-systems/downloads-pos-server-platform/releases/download/v1.0.2/SPOS-Solah-Enterprise-Server-v1.0.2.zip |
-| البصمات | — | https://github.com/spos-systems/downloads-pos-server-platform/releases/download/v1.0.2/SHA256SUMS.txt |
+| المثبّت أحادي الملف | 118 KB | https://github.com/spos-systems/downloads-pos-server-platform/releases/download/v1.0.3/SPOS-Solah-Enterprise-Setup.sh |
+| حزمة المصدر | 99 KB | https://github.com/spos-systems/downloads-pos-server-platform/releases/download/v1.0.3/SPOS-Solah-Enterprise-Server.zip |
+| البصمات | — | https://github.com/spos-systems/downloads-pos-server-platform/releases/download/v1.0.3/SHA256SUMS.txt |
+
+> **جديد v1.0.3:** إصلاح حاوية النفق نهائياً (صورة cloudflared الرسمية distroless بلا /bin/sh — أصبحت
+> غلاف Alpine بنفس السلوك الكامل)، ومخرجات الطرفية أثناء التركيب بالإنجليزية.
 
 ## التفعيل التلقائي — كيف يعمل؟
 
@@ -83,11 +86,11 @@ sudo bash spos-setup.sh
 sha256sum -c SHA256SUMS.txt
 ```
 
-بصمات v1.0.2:
+بصمات v1.0.3:
 
 ```text
-1231fd048c5b4e0aa49115209d100b2189957cbffa2b1b82d0fcef42fecb196d  SPOS-Solah-Enterprise-Setup-v1.0.2.sh
-25289d3e73cdd5b9de968c7835b1a40ee3417205d7524d96e2b7a5fc9d5adb2c  SPOS-Solah-Enterprise-Server-v1.0.2.zip
+f1c74e880109f153c865f743de108e06557378a0cd5fb8a2acd4bea217342df6  SPOS-Solah-Enterprise-Setup.sh
+05cb81e406aa13a521967092fbe1126aa7bca285aeffc864f34890b4ef07563e  SPOS-Solah-Enterprise-Server.zip
 ```
 
 ## الدعم الفني
