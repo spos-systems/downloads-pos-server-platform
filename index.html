@@ -183,7 +183,7 @@ footer a:hover{color:var(--amber)}
 <div class="hero">
   <div class="wrap hero-grid">
     <div>
-      <span class="chip"><span class="dot"></span> الإصدار 1.0.1 — مستقر ومجرّب</span>
+      <span class="chip"><span class="dot"></span> الإصدار 1.0.2 — مستقر ومجرّب</span>
       <h1>السيرفر الرئيسي لمنظومة <span class="gold">صولة</span> للمؤسسات</h1>
       <p class="lead">سيرفر الفرع كاملاً في <b>مثبّت أحادي الملف</b>: قاعدة بيانات PostgreSQL 17 ولوحة إدارة عربية وتطبيق هاتف ونفق آمن — على جهاز واحد عند الزبون، بأمر تركيب واحد.</p>
       <div class="promise">
@@ -194,7 +194,7 @@ footer a:hover{color:var(--amber)}
       <div class="cta-row">
         <a class="btn btn-primary" href="https://github.com/spos-systems/downloads-pos-server-platform/releases/latest/download/SPOS-Solah-Enterprise-Setup.sh" download>
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-          <span>تحميل المثبّت الآن<small>ملف واحد — 117 كيلوبايت فقط</small></span>
+          <span>تحميل المثبّت الآن<small>ملف واحد — 118 كيلوبايت فقط</small></span>
         </a>
         <a class="btn btn-ghost" href="#install">
           <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
@@ -212,10 +212,11 @@ footer a:hover{color:var(--amber)}
         </div>
         <div class="term-body">
           <div><span class="p">$</span> curl -fsSL https://github.com/spos-systems/<br>&nbsp;&nbsp;&nbsp;&nbsp;downloads-pos-server-platform/releases/latest/download/<br>&nbsp;&nbsp;&nbsp;&nbsp;SPOS-Solah-Enterprise-Setup.sh -o spos-setup.sh</div>
-          <div><span class="p">$</span> sudo bash spos-setup.sh --license SPOS-ENTERPRISE-XXXXXXXX</div>
+          <div><span class="p">$</span> sudo bash spos-setup.sh</div>
           <div class="c">✓ فُكّت الملفات في /opt/spos</div>
           <div class="c">✓ وُلّدت كلمات السر وحُفظت في .env</div>
           <div class="c">✓ اكتمل التركيب — اللوحة تعمل الآن على منفذ 5150</div>
+          <div class="c">→ الخطوة التالية: اللوحة ← الترخيص ← «تفعيل تلقائي» (لا مفتاح)</div>
         </div>
         <div class="copy-row">
           <button class="copy-btn" onclick="copyCmd(this)">
@@ -285,15 +286,15 @@ footer a:hover{color:var(--amber)}
         <div>
           <h3>شغّل أمر التركيب على جهاز السيرفر</h3>
           <p>أي جهاز Ubuntu/Debian نظيف — الجهاز القديم في المحل يكفي. انسخ الأمر والصقه في الطرفية (Terminal):</p>
-          <div class="cmd">curl -fsSL https://github.com/spos-systems/downloads-pos-server-platform/releases/latest/download/SPOS-Solah-Enterprise-Setup.sh -o spos-setup.sh<br>sudo bash spos-setup.sh --license SPOS-ENTERPRISE-XXXXXXXX</div>
-          <p>ينتهي بطباعة <b>عنوان اللوحة وكلمة سرها</b> — سجّلهما. (مع تخطي التفعيل مؤقتاً: احذف <span class="ltr">--license</span> وفعّله لاحقاً من اللوحة ← الترخيص.)</p>
+          <div class="cmd">curl -fsSL https://github.com/spos-systems/downloads-pos-server-platform/releases/latest/download/SPOS-Solah-Enterprise-Setup.sh -o spos-setup.sh<br>sudo bash spos-setup.sh</div>
+          <p>ينتهي بطباعة <b>عنوان اللوحة وكلمة سرها</b> — سجّلهما. لا مفتاح ولا خطوات إضافية.</p>
         </div>
       </div>
       <div class="step rv">
         <div class="n"></div>
         <div>
-          <h3>افتح اللوحة من أي متصفح في المحل</h3>
-          <p>على جهاز السيرفر أو أي جهاز على شبكة المحل: افتح العنوان المطبوع (مثل <span class="ltr">http://192.168.x.x:5150</span>)، سجّل الدخول، وتأكد أن الترخيص «فعّال — دائم بلا انتهاء». من اللوحة تعتمد المحطات وتدير كل شيء.</p>
+          <h3>فعّل الترخيص تلقائياً — من اللوحة</h3>
+          <p>افتح العنوان المطبوع من أي جهاز في المحل (مثل <span class="ltr">http://192.168.x.x:5150</span>)، ثم: الترخيص ← اسم صاحب المحل ورقم هاتفه ← <b>«تفعيل تلقائي»</b>. يتصل السيرفر بخادم تراخيص صولة بنفس بروتوكول بقية منتجاتها فيُسجَّل ويبدأ الفرع بالعمل <b>فوراً — بلا أي مفتاح</b>. وبعد إتمام الدفع يتحول الترخيص إلى <b>دائم للأبد</b> تلقائياً مع المزامنة.</p>
         </div>
       </div>
       <div class="step rv">
@@ -323,7 +324,7 @@ footer a:hover{color:var(--amber)}
         </div>
         <div class="dl-info">
           <h3>المثبّت أحادي الملف — SPOS Solah Enterprise Setup</h3>
-          <div class="meta"><span>الإصدار <b>1.0.1</b></span><span>الحجم <b>117 KB</b></span><span>Ubuntu / Debian</span><span>كل المنظومة مضمّنة فيه</span></div>
+          <div class="meta"><span>الإصدار <b>1.0.2</b></span><span>الحجم <b>118 KB</b></span><span>Ubuntu / Debian</span><span>كل المنظومة مضمّنة فيه</span></div>
         </div>
         <a class="dl-btn" href="https://github.com/spos-systems/downloads-pos-server-platform/releases/latest/download/SPOS-Solah-Enterprise-Setup.sh" download>
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
@@ -332,7 +333,7 @@ footer a:hover{color:var(--amber)}
       </div>
       <div class="dl-sha">
         <span>SHA256:</span>
-        <code id="sha-setup">d6c647f144c9ce4baabf4d4ca7bd0d9fb662e1acc08b3b91576d1cd185a42a19</code>
+        <code id="sha-setup">1231fd048c5b4e0aa49115209d100b2189957cbffa2b1b82d0fcef42fecb196d</code>
         <button class="mini-copy" onclick="copySha('sha-setup',this)">نسخ البصمة</button>
       </div>
     </div>
@@ -344,7 +345,7 @@ footer a:hover{color:var(--amber)}
         </div>
         <div class="dl-info">
           <h3>حزمة المصدر — SPOS Solah Enterprise Server</h3>
-          <div class="meta"><span>الإصدار <b>1.0.1</b></span><span>الحجم <b>115 KB</b></span><span>للوكيل الفني — تركيب يدوي عبر install.sh</span></div>
+          <div class="meta"><span>الإصدار <b>1.0.2</b></span><span>الحجم <b>118 KB</b></span><span>للوكيل الفني — تركيب يدوي عبر install.sh</span></div>
         </div>
         <a class="dl-btn alt" href="https://github.com/spos-systems/downloads-pos-server-platform/releases/latest/download/SPOS-Solah-Enterprise-Server.zip" download>
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
@@ -353,7 +354,7 @@ footer a:hover{color:var(--amber)}
       </div>
       <div class="dl-sha">
         <span>SHA256:</span>
-        <code id="sha-zip">bac946c1f7d426a527a2322cebaa84eab7cb167b66980cdf31f45bff02943669</code>
+        <code id="sha-zip">25289d3e73cdd5b9de968c7835b1a40ee3417205d7524d96e2b7a5fc9d5adb2c</code>
         <button class="mini-copy" onclick="copySha('sha-zip',this)">نسخ البصمة</button>
       </div>
     </div>
@@ -425,7 +426,7 @@ footer a:hover{color:var(--amber)}
     </details>
     <details class="rv">
       <summary>ما قصة الترخيص — اشتراك أم مرة واحدة؟ <span class="plus">+</span></summary>
-      <div class="a">ترخيص مؤسسات واحد <b>يُشترى مرة واحدة ويعمل للأبد</b> — بلا اشتراك شهري ولا سنوي ولا مقاعد. يُفعّل بالمفتاح تلقائياً أثناء التركيب أو من اللوحة ← الترخيص.</div>
+      <div class="a"><b>تفعيل تلقائي بلا مفتاح</b> — من اللوحة: اسم صاحب المحل ورقم هاتفه ← «تفعيل تلقائي»، فيُسجَّل السيرفر لدى خادم تراخيص صولة ويعمل فوراً كما في بقية منتجاتها. وبعد إتمام الدفع يتحول الترخيص إلى <b>دائم يُشترى مرة واحدة ويعمل للأبد</b> — بلا اشتراك ولا مقاعد — والتحويل يصل تلقائياً مع المزامنة.</div>
     </details>
     <details class="rv">
       <summary>هل يعمل السيرفر على ويندوز؟ <span class="plus">+</span></summary>
@@ -476,7 +477,7 @@ footer a:hover{color:var(--amber)}
 </footer>
 
 <script>
-const INSTALL_CMD = 'curl -fsSL https://github.com/spos-systems/downloads-pos-server-platform/releases/latest/download/SPOS-Solah-Enterprise-Setup.sh -o spos-setup.sh && sudo bash spos-setup.sh --license SPOS-ENTERPRISE-XXXXXXXX';
+const INSTALL_CMD = 'curl -fsSL https://github.com/spos-systems/downloads-pos-server-platform/releases/latest/download/SPOS-Solah-Enterprise-Setup.sh -o spos-setup.sh && sudo bash spos-setup.sh';
 function flash(btn, okText){
   const old = btn.innerHTML;
   btn.innerHTML = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> ' + okText;

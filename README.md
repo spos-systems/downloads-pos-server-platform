@@ -1,8 +1,9 @@
 # 🏢 تنزيلات السيرفر الرئيسي — منظومة صولة للمؤسسات
 
 **SPOS Solah Enterprise Server** — سيرفر الفرع كاملاً في **مثبّت أحادي الملف**:
-قاعدة PostgreSQL 17 + لوحة إدارة عربية + تطبيق هاتف + نفق عام + محطات بلا حد —
-ترخيص مؤسسات واحد يُشترى **مرة واحدة ويعمل للأبد** (بلا اشتراك ولا مقاعد).
+قاعدة PostgreSQL 17 + لوحة إدارة عربية + تطبيق هاتف + نفق عام + محطات بلا حد.
+
+**الترخيص يتفعّل تلقائياً** مع سيرفر تراخيص صولة (license.spos.ly) — **لا مفتاح ولا وسيط إطلاقاً**، وبعد الدفع يتحول إلى **دائم للأبد** تلقائياً.
 
 > 🌐 **صفحة التحميل للزبائن:** https://spos-systems.github.io/downloads-pos-server-platform/
 
@@ -12,19 +13,18 @@
 
 ```bash
 curl -fsSL https://github.com/spos-systems/downloads-pos-server-platform/releases/latest/download/SPOS-Solah-Enterprise-Setup.sh -o spos-setup.sh
-sudo bash spos-setup.sh --license SPOS-ENTERPRISE-XXXXXXXX
+sudo bash spos-setup.sh
 ```
 
-- لا git ولا فلاشة ولا ملفات إضافية — **كل شيء داخل الملف الواحد** (الحزمة كاملة مضمّنة فيه).
-- المثبّت يثبّت Docker إن غاب، يولّد كلمات السر، يشغّل كل شيء، يفعّل الترخيص تلقائياً بالمفتاح،
-  ثم يطبع **عنوان اللوحة وكلمة سرها**.
-- بلا مفتاح الآن؟ شغّل التركيب بدون `--license` ثم فعّل المفتاح من اللوحة ← **الترخيص**.
+- لا git ولا فلاشة ولا ملفات إضافية — **كل شيء داخل الملف الواحد**.
+- المثبّت يثبّت Docker إن غاب، يولّد كلمات السر، يشغّل كل شيء، ثم يطبع **عنوان اللوحة وكلمة سرها**.
+- **التفعيل التلقائي:** افتح اللوحة ← الترخيص ← اسم صاحب المحل ورقم هاتفه ← **«تفعيل تلقائي»** —
+  يعمل الفرع فوراً، وبعد إتمام الدفع يتحول الترخيص إلى دائم تلقائياً مع المزامنة.
 
 ## خيارات المثبّت
 
 | الخيار | الوظيفة |
 | --- | --- |
-| `--license KEY` | تفعيل ترخيص المؤسسات تلقائياً بعد التركيب |
 | `--dir PATH` | مجلد التثبيت (الافتراضي `/opt/spos`) |
 | `--port N` | منفذ اللوحة (الافتراضي `5150`) |
 | `--no-tunnel` | تعطيل النفق العام (مفعّل فوراً افتراضياً) |
@@ -37,13 +37,21 @@ sudo bash spos-setup.sh --license SPOS-ENTERPRISE-XXXXXXXX
 | حزمة المصدر (للوكيل) | https://github.com/spos-systems/downloads-pos-server-platform/releases/latest/download/SPOS-Solah-Enterprise-Server.zip |
 | البصمات | https://github.com/spos-systems/downloads-pos-server-platform/releases/latest/download/SHA256SUMS.txt |
 
-## v1.0.1 — الإصدار الأول (أحدث)
+## v1.0.2 — أحدث إصدار
 
 | الحزمة | الحجم | الرابط |
 | --- | --- | --- |
-| المثبّت أحادي الملف | 117 KB | https://github.com/spos-systems/downloads-pos-server-platform/releases/download/v1.0.1/SPOS-Solah-Enterprise-Setup-v1.0.1.sh |
-| حزمة المصدر | 115 KB | https://github.com/spos-systems/downloads-pos-server-platform/releases/download/v1.0.1/SPOS-Solah-Enterprise-Server-v1.0.1.zip |
-| البصمات | — | https://github.com/spos-systems/downloads-pos-server-platform/releases/download/v1.0.1/SHA256SUMS.txt |
+| المثبّت أحادي الملف | 118 KB | https://github.com/spos-systems/downloads-pos-server-platform/releases/download/v1.0.2/SPOS-Solah-Enterprise-Setup-v1.0.2.sh |
+| حزمة المصدر | 118 KB | https://github.com/spos-systems/downloads-pos-server-platform/releases/download/v1.0.2/SPOS-Solah-Enterprise-Server-v1.0.2.zip |
+| البصمات | — | https://github.com/spos-systems/downloads-pos-server-platform/releases/download/v1.0.2/SHA256SUMS.txt |
+
+## التفعيل التلقائي — كيف يعمل؟
+
+- عند الضغط على «تفعيل تلقائي» يتصل السيرفر بخادم تراخيص صولة **بنفس بروتوكول بقية منتجات صولة**
+  فيُسجَّل ويُصدر ترخيصه الموقّع فوراً — بلا أي مفتاح.
+- يبدأ الفرع بالعمل في الحال، وبعد إتمام الدفع يحوّل المالك الترخيص إلى **دائم** من لوحة
+  خادم التراخيص — والتحويل يصل السيرفر تلقائياً مع المزامنة اليومية.
+- انقطاع الإنترنت لا يوقف المحل أبداً: التحقق محلي بتوقيع RSA مضمّن.
 
 ## المتطلبات
 
@@ -56,8 +64,8 @@ sudo bash spos-setup.sh --license SPOS-ENTERPRISE-XXXXXXXX
 من مستودع المحطات العام: **https://github.com/spos-systems/downloads-pos-pc-platform**
 
 بعد تركيب السيرفر: من المحطة ← الإعدادات ← **قاعدة البيانات والشبكة** ← «وضع الجهاز الفرعي» ←
-يظهر السيرفر في **الاكتشاف التلقائي** ← «طلب اقتران» ← اعتماده من **لوحة السيرفر الرئيسي** ←
-المحطة تتبنى **ترخيص المؤسسات الدائم** تلقائياً — بلا أي ترخيص إضافي مهما كثرت المحطات.
+يظهر السيرفر في **الاكتشاف التلقائي** ← «طلب اقتران» ← اعتماده من **لوحة السيرفر الرئيسي** —
+المحطة تتبنى الترخيص تلقائياً — بلا أي ترخيص إضافي مهما كثرت المحطات.
 
 ## الترقية
 
@@ -75,11 +83,11 @@ sudo bash spos-setup.sh
 sha256sum -c SHA256SUMS.txt
 ```
 
-بصمات v1.0.1:
+بصمات v1.0.2:
 
 ```text
-d6c647f144c9ce4baabf4d4ca7bd0d9fb662e1acc08b3b91576d1cd185a42a19  SPOS-Solah-Enterprise-Setup-v1.0.1.sh
-bac946c1f7d426a527a2322cebaa84eab7cb167b66980cdf31f45bff02943669  SPOS-Solah-Enterprise-Server-v1.0.1.zip
+1231fd048c5b4e0aa49115209d100b2189957cbffa2b1b82d0fcef42fecb196d  SPOS-Solah-Enterprise-Setup-v1.0.2.sh
+25289d3e73cdd5b9de968c7835b1a40ee3417205d7524d96e2b7a5fc9d5adb2c  SPOS-Solah-Enterprise-Server-v1.0.2.zip
 ```
 
 ## الدعم الفني
