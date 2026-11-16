@@ -1,15 +1,15 @@
 {
-  "latest_version": "1.4.1",
+  "latest_version": "1.4.2",
   "product": "SPOS Solah Enterprise — سيرفر المتاجر الكبيرة (السيرفر الرئيسي للفرع)",
-  "changelog": "إزالة كلمة WIGHTCOM من بجانب الشعار الأبيض (كانت اسم الملف فقط) + المثبّت الصغير الجميل بنمط نسخة الكمبيوتر (سطر واحد + بصمة SHA256) + رسائل تثبيت عربية كاملة الألوان + سطر التثبيت الواحد في لوحة التنزيلات",
+  "changelog": "الشعار الأبيض بنسبته الحقيقية في كل المواضع (لا قص ولا أحجام غريبة) + خرج الطرفية إنجليزي نظيف بلا عربية تتشوه في التيرمنال + عنوان اللوحة يطبع عنوانات LAN الحقيقية القابلة للنسخ",
   "setup": {
     "url": "https://github.com/spos-systems/downloads-pos-server-platform/releases/latest/download/SPOS-Solah-Enterprise-Setup.sh",
-    "sha256": "9fa36086efa2a19e9612aae3bcbabfa5de908ef32cbafa327e439dcdf801361b",
-    "size_mb": 1.29
+    "sha256": "2168f34459d6262783759c98d1b4e6ca92b4e16d316f47dcaf389dd7066031fa",
+    "size_mb": 1.23
   },
   "install": {
     "url": "https://github.com/spos-systems/downloads-pos-server-platform/releases/latest/download/SPOS-Solah-Enterprise-Install.sh",
-    "sha256": "dc077c8668bc58656225e26c323101fcdf001fd91fed57c2e4dc7a6c04ab9bad",
-    "size_kb": 10.6
+    "sha256": "8b4828448ee3f8a18f225da0c345309605f327f88e7026adc3ca9e3c196b06ac",
+    "size_kb": 9.6
   }
 }
