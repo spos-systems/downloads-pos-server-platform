@@ -1,0 +1,42 @@
+{
+  "latest_version": "1.0.0",
+  "min_supported_version": "1.0.0",
+  "changelog": "SPOS Solah Station v1.0.0 — الإصدار الأول من محطات صولة لنقاط البيع (نسخة المؤسسات): برنامج مستقل تماماً عن نسخة الكمبيوتر يعمل حصراً بالاتصال بالسيرفر الرئيسي للفرع: أول إقلاع يفتح شاشة الربط بالسيرفر الرئيسي (عنوان مباشر أو اكتشاف تلقائي أو رابط نفق https من خارج المحل ← اسم المحطة ← اعتماد المالك من لوحة السيرفر خلال ثوانٍ) فيتبنى ترخيص المؤسسة — شراء واحد دائم لعدد غير محدود من الأجهزة في نفس المتجر — وتعمل كل شاشات المنظومة على قاعدة الفرع المشتركة لحظياً. لا قاعدة محلية ولا تفعيل ترخيص من المحطة إطلاقاً، وقناة التحديث مستقلة كلياً عن قناة نسخة الكمبيوتر.",
+  "full": {
+    "url": "https://github.com/spos-systems/downloads-pos-server-platform/releases/download/v1.1.0/SPOS-Solah-Station-Windows-x64.zip",
+    "sha256": "c2fe372e698b5f6267aeb740d59887ce56186258ffeb9cf1be9e65f0a8daf8bb",
+    "size_mb": 192.0,
+    "changelogUrl": "https://github.com/spos-systems/downloads-pos-server-platform/releases/tag/v1.1.0"
+  },
+  "windows": {
+    "url": "https://github.com/spos-systems/downloads-pos-server-platform/releases/download/v1.1.0/SPOS-Solah-Station-Windows-x64.zip",
+    "sha256": "c2fe372e698b5f6267aeb740d59887ce56186258ffeb9cf1be9e65f0a8daf8bb",
+    "size_mb": 192.0,
+    "changelogUrl": "https://github.com/spos-systems/downloads-pos-server-platform/releases/tag/v1.1.0"
+  },
+  "linux": {
+    "url": "https://github.com/spos-systems/downloads-pos-server-platform/releases/download/v1.1.0/SPOS-Solah-Station-Linux-x64.zip",
+    "sha256": "3e6d6965a110e75afcde0e3bade7095d46e7619ffd4227420b2c4deee2784cb0",
+    "size_mb": 133.8,
+    "changelogUrl": "https://github.com/spos-systems/downloads-pos-server-platform/releases/tag/v1.1.0"
+  },
+  "appimage": {
+    "url": "https://github.com/spos-systems/downloads-pos-server-platform/releases/download/v1.1.0/SPOS-Solah-Station-Linux-x64.AppImage",
+    "sha256": "520818de0817ae976792552953366c0f2e766ff48f27c4d0943f350ac206188f",
+    "size_mb": 135.6,
+    "changelogUrl": "https://github.com/spos-systems/downloads-pos-server-platform/releases/tag/v1.1.0"
+  },
+  "deb": {
+    "url": "https://github.com/spos-systems/downloads-pos-server-platform/releases/download/v1.1.0/SPOS-Solah-Station-Linux-x64.deb",
+    "sha256": "484a37ad927e2e0e2eecd2a7efa2fe331fde4047d2f6a66fe7c9585088e71672",
+    "size_mb": 106.1,
+    "changelogUrl": "https://github.com/spos-systems/downloads-pos-server-platform/releases/tag/v1.1.0"
+  },
+  "installer": {
+    "url": "https://github.com/spos-systems/downloads-pos-server-platform/releases/download/v1.1.0/SPOS-Solah-Station-Windows-Setup-x64.exe",
+    "sha256": "745fd6004b3c1f0bb07ba960b87a1158bdd120984bf0b6c9ea227c9ecc96dcd6",
+    "size_mb": 151.3,
+    "changelogUrl": "https://github.com/spos-systems/downloads-pos-server-platform/releases/tag/v1.1.0"
+  },
+  "dependencies": {}
+}
