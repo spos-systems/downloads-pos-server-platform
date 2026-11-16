@@ -28,10 +28,17 @@
     "changelogUrl": "https://github.com/spos-systems/pos-sub-server-platform/releases/tag/v1.1.1"
   },
   "installer": {
-    "url": "https://github.com/spos-systems/downloads-pos-server-platform/releases/latest/download/SPOS-Solah-Station-Windows-Setup-x64.exe",
-    "sha256": "83457e1a358792f0c947b23cfa573f312ea8b979723d02290a41c7be06bae0ed",
-    "size_mb": 159.1,
-    "changelogUrl": "https://github.com/spos-systems/pos-sub-server-platform/releases/tag/v1.1.1"
+    "version": "1.6.5",
+    "url": "https://github.com/spos-systems/downloads-pos-server-platform/releases/download/v1.2.2/SPOS-Solah-Station-Setup.exe",
+    "sha256": "c38bd4d085db902a78831f5373f9eaee9617451603bd349c372804eafc211973",
+    "size_mb": 1.5
   },
-  "dependencies": {}
+  "dependencies": {},
+  "launcher": {
+    "version": "1.6.5",
+    "changelog": "المثبّت الصغير الجميل v1.6.5 — هوية محطة صولة كاملة (SPOS Solah Station / محطة صولة لنقاط البيع / نسخة المحطات) واختصارات مطابقة للتطبيق حرفياً، وتعايش حقيقي مع نسخة الكمبيوتر على نفس الجهاز (قفل ومجلدات مؤقتة مستقلة)",
+    "url": "https://github.com/spos-systems/downloads-pos-server-platform/releases/download/v1.2.2/SPOS-Solah-Station-Setup.exe",
+    "sha256": "c38bd4d085db902a78831f5373f9eaee9617451603bd349c372804eafc211973",
+    "size_mb": 1.5
+  }
 }
