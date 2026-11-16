@@ -1,7 +1,10 @@
-# 🏢 تنزيلات السيرفر الرئيسي — منظومة صولة للمؤسسات
+# 🏢 تنزيلات منظومة المؤسسات — السيرفر الرئيسي ومحطات الكاشير
 
 **SPOS Solah Enterprise Server** — سيرفر الفرع كاملاً في **مثبّت أحادي الملف**:
 قاعدة PostgreSQL 17 + لوحة إدارة عربية + تطبيق هاتف + نفق عام + محطات بلا حد.
+
+**SPOS Solah Station** — محطات الكاشير (ويندوز/لينكس) التي تقترن بالسيرفر خلال دقيقة:
+شراء واحد دائم لعدد غير محدود من المحطات في نفس المتجر.
 
 **الترخيص يتفعّل تلقائياً** مع سيرفر تراخيص صولة (license.spos.ly) — **لا مفتاح ولا وسيط إطلاقاً**، وبعد الدفع يتحول إلى **دائم للأبد** تلقائياً.
 
@@ -34,8 +37,16 @@ sudo bash spos-setup.sh
 | الحزمة | الرابط |
 | --- | --- |
 | المثبّت أحادي الملف ⭐ | https://github.com/spos-systems/downloads-pos-server-platform/releases/latest/download/SPOS-Solah-Enterprise-Setup.sh |
+| محطة ويندوز (SPOS Solah Station) | https://github.com/spos-systems/downloads-pos-server-platform/releases/latest/download/SPOS-Solah-Station-Windows-Setup-x64.exe |
+| محطة لينكس AppImage | https://github.com/spos-systems/downloads-pos-server-platform/releases/latest/download/SPOS-Solah-Station-Linux-x64.AppImage |
+| محطة لينكس .deb | https://github.com/spos-systems/downloads-pos-server-platform/releases/latest/download/SPOS-Solah-Station-Linux-x64.deb |
 | حزمة المصدر (للوكيل) | https://github.com/spos-systems/downloads-pos-server-platform/releases/latest/download/SPOS-Solah-Enterprise-Server.zip |
 | البصمات | https://github.com/spos-systems/downloads-pos-server-platform/releases/latest/download/SHA256SUMS.txt |
+
+> حزم المحطات هي منتج **SPOS Solah Station** (pos-sub-server-platform) — برنامج
+> المحطات المستقل لمنظومة المؤسسات: يُقلع بشاشة الربط بالسيرفر الرئيسي ويعمل
+> على قاعدة الفرع بترخيص المؤسسة المتبنّى (شراء واحد دائم لأجهزة غير محدودة).
+> قناة تحديث المحطات المستقلة `station-latest.json` تُنشر من هذا المستودع أيضاً.
 
 ## v1.0.3 — أحدث إصدار
 
