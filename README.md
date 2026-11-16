@@ -6,6 +6,10 @@
 **SPOS Solah Station** — محطات الكاشير (ويندوز/لينكس) التي تقترن بالسيرفر خلال دقيقة:
 شراء واحد دائم لعدد غير محدود من المحطات في نفس المتجر.
 
+**SPOS Solah Phone** — تطبيق الهاتف الحقيقي (أندرويد أصلي — ليس صفحة ويب): يُثبّت
+مرة واحدة على هاتف المالك ويرتبط مرة واحدة بالسيرفر الرئيسي (اقتران ← اعتماد المالك)،
+ثم يعمل **بكامل شاشات المنظومة** على قاعدة الفرع — من المحل أو من أي مكان عبر النفق.
+
 **الترخيص يتفعّل تلقائياً** مع سيرفر تراخيص صولة (license.spos.ly) — **لا مفتاح ولا وسيط إطلاقاً**، وبعد الدفع يتحول إلى **دائم للأبد** تلقائياً.
 
 > 🌐 **صفحة التحميل للزبائن:** https://spos-systems.github.io/downloads-pos-server-platform/
@@ -37,6 +41,8 @@ sudo bash spos-setup.sh
 | الحزمة | الرابط |
 | --- | --- |
 | المثبّت أحادي الملف ⭐ | https://github.com/spos-systems/downloads-pos-server-platform/releases/latest/download/SPOS-Solah-Enterprise-Setup.sh |
+| تطبيق الهاتف الحقيقي (APK أندرويد) ⭐ | https://github.com/spos-systems/downloads-pos-server-platform/releases/latest/download/SPOS-Solah-Phone-Android.apk |
+| قناة تحديث تطبيق الهاتف | https://github.com/spos-systems/downloads-pos-server-platform/releases/latest/download/phone-latest.json |
 | محطة ويندوز (SPOS Solah Station) | https://github.com/spos-systems/downloads-pos-server-platform/releases/latest/download/SPOS-Solah-Station-Windows-Setup-x64.exe |
 | محطة لينكس AppImage | https://github.com/spos-systems/downloads-pos-server-platform/releases/latest/download/SPOS-Solah-Station-Linux-x64.AppImage |
 | محطة لينكس .deb | https://github.com/spos-systems/downloads-pos-server-platform/releases/latest/download/SPOS-Solah-Station-Linux-x64.deb |
