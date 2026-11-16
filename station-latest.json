@@ -1,42 +1,33 @@
 {
-  "latest_version": "1.1.0",
+  "latest_version": "1.1.1",
   "min_supported_version": "1.0.0",
-  "changelog": "SPOS Solah Station v1.1.0 — شاشة الربط بالسيرفر الرئيسي منسوخة من المنظومة نفسها حرفياً (ترويسة الشعار وشرائط الخطوات وبطاقات المنظومة وشريط رجوع/التالي ومراجعة قبل الاقتران — بدل الشكل القديم) + قرار المالك «تطبيق الكمبيوتر لا يجب أن يرتبط إلا من الداخل»: المحطة تقبل عنوان الشبكة الداخلية فقط (IP:منفذ أو http://IP:منفذ) — رابط النفق https مرفوض صراحة (النفق لهاتف المالك من لوحة السيرفر لا لمحطات الكاشير) + الإعداد مرة واحدة: المحطة المقترنة لا ترى معالج الربط أبداً + أيقونة النظام الجديدة (شاشة الكاشير والعربة والإيصال وقاعدة البيانات) في المثبّت وexe والسبلاش وPWA.",
-  "full": {
-    "url": "https://github.com/spos-systems/downloads-pos-server-platform/releases/download/v1.1.0/SPOS-Solah-Station-Windows-x64.zip",
-    "sha256": "c2fe372e698b5f6267aeb740d59887ce56186258ffeb9cf1be9e65f0a8daf8bb",
-    "size_mb": 192.0,
-    "changelogUrl": "https://github.com/spos-systems/downloads-pos-server-platform/releases/tag/v1.1.0"
-  },
+  "changelog": "v1.1.1 — أيقونة النظام كما أرسلها المالك حرفياً (قرار: بلا قص ولا قناع): (1) أيقونة المالك 2048x2048 بحوافها المدوّرة أصبحت أيقونة البرنامج في كل المواضع — exe ويندوز (icon.ico بكل مقاساته 16→256) ولينكس (hicolor 16→512) والمثبّت NSIS وشاشة السبلاش وPWA — وكلها مجرد تصغير LANCZOS للصورة الأصلية كاملة الإطار، فالزوايا الفاتحة نفسها والحواف المدوّرة نفسها. (2) شعار الشركة الأزرق الرسمي في تذييل السبلاش، والأبيض في الترويسة الزرقاء. (3) نفس أساس v1.1.0 كله: شاشة الربط بالسيرفر الرئيسي منسوخة من المنظومة حرفياً، والربط الداخلي فقط، والإعداد مرة واحدة، وترخيص المؤسسة المُتبنّى (شراء واحد دائم — محطات بلا حد في نفس المتجر). كل الحزم الأربع (مثبّت ويندوز NSIS + zip ويندوز + zip لينكس + AppImage + deb) مبنية وموقّعة وحرّاس asar ناجحون: رابط خادم الترخيص وهوية المحطة مخبوزان والصور الجديدة داخل asar.",
+  "full": {},
   "windows": {
-    "url": "https://github.com/spos-systems/downloads-pos-server-platform/releases/download/v1.1.0/SPOS-Solah-Station-Windows-x64.zip",
-    "sha256": "c2fe372e698b5f6267aeb740d59887ce56186258ffeb9cf1be9e65f0a8daf8bb",
-    "size_mb": 192.0,
-    "changelogUrl": "https://github.com/spos-systems/downloads-pos-server-platform/releases/tag/v1.1.0"
+    "url": "https://github.com/spos-systems/pos-sub-server-platform/releases/latest/download/SPOS-Solah-Station-Windows-Setup-x64.exe",
+    "sha256": "83457e1a358792f0c947b23cfa573f312ea8b979723d02290a41c7be06bae0ed",
+    "size_mb": 152
+  },
+  "winzip": {
+    "url": "https://github.com/spos-systems/pos-sub-server-platform/releases/latest/download/SPOS-Solah-Station-Windows-x64.zip",
+    "sha256": "2f799249fcd2830a346409a1ae8557ce41870bac55f250e698071da6ef627087",
+    "size_mb": 193
   },
   "linux": {
-    "url": "https://github.com/spos-systems/downloads-pos-server-platform/releases/download/v1.1.0/SPOS-Solah-Station-Linux-x64.zip",
-    "sha256": "3e6d6965a110e75afcde0e3bade7095d46e7619ffd4227420b2c4deee2784cb0",
-    "size_mb": 133.8,
-    "changelogUrl": "https://github.com/spos-systems/downloads-pos-server-platform/releases/tag/v1.1.0"
+    "url": "https://github.com/spos-systems/pos-sub-server-platform/releases/latest/download/SPOS-Solah-Station-Linux-x64.zip",
+    "sha256": "d45357076eaa6c2ded6bfe79a3bf931e21a9bb96811ca47e275091656036cd5c",
+    "size_mb": 141
   },
   "appimage": {
-    "url": "https://github.com/spos-systems/downloads-pos-server-platform/releases/download/v1.1.0/SPOS-Solah-Station-Linux-x64.AppImage",
-    "sha256": "520818de0817ae976792552953366c0f2e766ff48f27c4d0943f350ac206188f",
-    "size_mb": 135.6,
-    "changelogUrl": "https://github.com/spos-systems/downloads-pos-server-platform/releases/tag/v1.1.0"
+    "url": "https://github.com/spos-systems/pos-sub-server-platform/releases/latest/download/SPOS-Solah-Station-Linux-x64.AppImage",
+    "sha256": "b6384a627550c217853a35d2ed9df09c0eddd58dafdfee697d1c3652d70ba8db",
+    "size_mb": 143
   },
   "deb": {
-    "url": "https://github.com/spos-systems/downloads-pos-server-platform/releases/download/v1.1.0/SPOS-Solah-Station-Linux-x64.deb",
-    "sha256": "484a37ad927e2e0e2eecd2a7efa2fe331fde4047d2f6a66fe7c9585088e71672",
-    "size_mb": 106.1,
-    "changelogUrl": "https://github.com/spos-systems/downloads-pos-server-platform/releases/tag/v1.1.0"
+    "url": "https://github.com/spos-systems/pos-sub-server-platform/releases/latest/download/SPOS-Solah-Station-Linux-x64.deb",
+    "sha256": "f1460c4ecdb40d25db4de4a2a82e833e96259fee816dc5b8e9b0fc44fb7d643d",
+    "size_mb": 112
   },
-  "installer": {
-    "url": "https://github.com/spos-systems/downloads-pos-server-platform/releases/download/v1.1.0/SPOS-Solah-Station-Windows-Setup-x64.exe",
-    "sha256": "745fd6004b3c1f0bb07ba960b87a1158bdd120984bf0b6c9ea227c9ecc96dcd6",
-    "size_mb": 151.3,
-    "changelogUrl": "https://github.com/spos-systems/downloads-pos-server-platform/releases/tag/v1.1.0"
-  },
+  "installer": {},
   "dependencies": {}
 }
