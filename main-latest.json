@@ -4,12 +4,12 @@
   "changelog": "الشعار الأبيض بنسبته الحقيقية في كل المواضع (لا قص ولا أحجام غريبة) + خرج الطرفية إنجليزي نظيف بلا عربية تتشوه في التيرمنال + عنوان اللوحة يطبع عنوانات LAN الحقيقية القابلة للنسخ",
   "setup": {
     "url": "https://github.com/spos-systems/downloads-pos-server-platform/releases/latest/download/SPOS-Solah-Enterprise-Setup.sh",
-    "sha256": "2168f34459d6262783759c98d1b4e6ca92b4e16d316f47dcaf389dd7066031fa",
+    "sha256": "6a6ce273f763b8d095201ce9f36f782c74d8adaf9f8c39d38225af325f6fe74e",
     "size_mb": 1.23
   },
   "install": {
     "url": "https://github.com/spos-systems/downloads-pos-server-platform/releases/latest/download/SPOS-Solah-Enterprise-Install.sh",
-    "sha256": "8b4828448ee3f8a18f225da0c345309605f327f88e7026adc3ca9e3c196b06ac",
+    "sha256": "1a494cae216aa5bcd98cff5b6dafae4371e3323abb62c02d232138f82cc02945",
     "size_kb": 9.6
   }
 }
