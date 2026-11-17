@@ -4,8 +4,8 @@
   "changelog": "v1.4.4 — طلبات المالك الثلاثة دفعة واحدة: (1) اكتشاف المحطات على الشبكة المحلية يعمل فعلاً — خدمة discovery جديدة بشبكة host تبث المنارة خارج Docker (بث عام + موجّه لكل شبكة فرعية) وترد على استقصاءات المحطات v1.1.4+ فلا يمنعها جدار حماية ويندوز. (2) استعادة كلمة سر اللوحة عبر سيرفر التراخيص — نفس مسار نسخة الكمبيوتر: «نسيت كلمة السر؟» ← رمز QR ← موافقة الفني (نافذة 5 دقائق) ← كلمة سر جديدة. (3) جدول «اللقطات في السحابة R2» يعرض دائماً — سرد متين + بحث في جذر الحاوية عند فراغ البادئة + أزرار استعادة وتنزيل + فحص السرد في اختبار الاتصال. الاختبارات: 61 ناجحة.",
   "setup": {
     "url": "https://github.com/spos-systems/downloads-pos-server-platform/releases/latest/download/SPOS-Solah-Enterprise-Setup.sh",
-    "sha256": "5664ed84aedfa887cb112313a14d8dcf9641e01aa2e813599f81170dc7e820d2",
-    "size_mb": 1.29
+    "sha256": "b3f1747ae8f7e14f4985e9e19ead3d3e0c7233937a3b83380ca206facd307348",
+    "size_mb": 1.25
   },
   "install": {
     "url": "https://github.com/spos-systems/downloads-pos-server-platform/releases/latest/download/SPOS-Solah-Enterprise-Install.sh",
