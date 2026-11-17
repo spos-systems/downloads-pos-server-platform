@@ -1,11 +1,11 @@
 {
-  "latest_version": "1.4.2",
+  "latest_version": "1.4.3",
   "product": "SPOS Solah Enterprise — سيرفر المتاجر الكبيرة (السيرفر الرئيسي للفرع)",
-  "changelog": "الشعار الأبيض بنسبته الحقيقية في كل المواضع (لا قص ولا أحجام غريبة) + خرج الطرفية إنجليزي نظيف بلا عربية تتشوه في التيرمنال + عنوان اللوحة يطبع عنوانات LAN الحقيقية القابلة للنسخ",
+  "changelog": "إصلاح جذر تفعيل ترخيص المؤسسة: مفتاح X-API-Key الصحيح الذي يرسله تطبيق سطح المكتب العامل (اجتاز البوابة فعلياً ورد ترخيص موقعاً) بدل base64 للنص المقروء الذي كانت ترفضه البوابة بـ403 فارغة فتظهر «رد غير مفهوم من خادم التراخيص» — التفعيل التلقائي يعمل الآن كاملاً + تشخيص واضح لكل رد غير JSON + توحيد الأيقونات بنمط المنظومة في اللوحة (شعار الشركة الأبيض في شريط العنوان وصف الشركة في الترويسة)",
   "setup": {
     "url": "https://github.com/spos-systems/downloads-pos-server-platform/releases/latest/download/SPOS-Solah-Enterprise-Setup.sh",
-    "sha256": "6a6ce273f763b8d095201ce9f36f782c74d8adaf9f8c39d38225af325f6fe74e",
-    "size_mb": 1.23
+    "sha256": "5664ed84aedfa887cb112313a14d8dcf9641e01aa2e813599f81170dc7e820d2",
+    "size_mb": 1.29
   },
   "install": {
     "url": "https://github.com/spos-systems/downloads-pos-server-platform/releases/latest/download/SPOS-Solah-Enterprise-Install.sh",

@@ -7,29 +7,29 @@
     "url": "https://github.com/spos-systems/downloads-pos-server-platform/releases/latest/download/SPOS-Solah-Station-Windows-x64.zip",
     "sha256": "2f799249fcd2830a346409a1ae8557ce41870bac55f250e698071da6ef627087",
     "size_mb": 201.6,
-    "changelogUrl": "https://github.com/spos-systems/pos-sub-server-platform/releases/tag/v1.1.1"
+    "changelogUrl": "https://github.com/spos-systems/pos-sub-server-platform/releases/tag/v1.1.3"
   },
   "linux": {
     "url": "https://github.com/spos-systems/downloads-pos-server-platform/releases/latest/download/SPOS-Solah-Station-Linux-x64.zip",
     "sha256": "d45357076eaa6c2ded6bfe79a3bf931e21a9bb96811ca47e275091656036cd5c",
     "size_mb": 140.9,
-    "changelogUrl": "https://github.com/spos-systems/pos-sub-server-platform/releases/tag/v1.1.1"
+    "changelogUrl": "https://github.com/spos-systems/pos-sub-server-platform/releases/tag/v1.1.3"
   },
   "appimage": {
     "url": "https://github.com/spos-systems/downloads-pos-server-platform/releases/latest/download/SPOS-Solah-Station-Linux-x64.AppImage",
     "sha256": "b6384a627550c217853a35d2ed9df09c0eddd58dafdfee697d1c3652d70ba8db",
     "size_mb": 142.6,
-    "changelogUrl": "https://github.com/spos-systems/pos-sub-server-platform/releases/tag/v1.1.1"
+    "changelogUrl": "https://github.com/spos-systems/pos-sub-server-platform/releases/tag/v1.1.3"
   },
   "deb": {
     "url": "https://github.com/spos-systems/downloads-pos-server-platform/releases/latest/download/SPOS-Solah-Station-Linux-x64.deb",
     "sha256": "f1460c4ecdb40d25db4de4a2a82e833e96259fee816dc5b8e9b0fc44fb7d643d",
     "size_mb": 112.4,
-    "changelogUrl": "https://github.com/spos-systems/pos-sub-server-platform/releases/tag/v1.1.1"
+    "changelogUrl": "https://github.com/spos-systems/pos-sub-server-platform/releases/tag/v1.1.3"
   },
   "installer": {
     "version": "1.6.5",
-    "url": "https://github.com/spos-systems/downloads-pos-server-platform/releases/download/v1.2.2/SPOS-Solah-Station-Setup.exe",
+    "url": "https://github.com/spos-systems/downloads-pos-server-platform/releases/download/v1.2.3/SPOS-Solah-Station-Setup.exe",
     "sha256": "c38bd4d085db902a78831f5373f9eaee9617451603bd349c372804eafc211973",
     "size_mb": 1.5
   },
@@ -37,7 +37,7 @@
   "launcher": {
     "version": "1.6.5",
     "changelog": "المثبّت الصغير الجميل v1.6.5 — هوية محطة صولة كاملة (SPOS Solah Station / محطة صولة لنقاط البيع / نسخة المحطات) واختصارات مطابقة للتطبيق حرفياً، وتعايش حقيقي مع نسخة الكمبيوتر على نفس الجهاز (قفل ومجلدات مؤقتة مستقلة)",
-    "url": "https://github.com/spos-systems/downloads-pos-server-platform/releases/download/v1.2.2/SPOS-Solah-Station-Setup.exe",
+    "url": "https://github.com/spos-systems/downloads-pos-server-platform/releases/download/v1.2.3/SPOS-Solah-Station-Setup.exe",
     "sha256": "c38bd4d085db902a78831f5373f9eaee9617451603bd349c372804eafc211973",
     "size_mb": 1.5
   }
