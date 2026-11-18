@@ -1,11 +1,11 @@
 {
-  "latest_version": "1.4.7",
+  "latest_version": "1.4.8",
   "product": "SPOS Solah Enterprise — سيرفر المتاجر الكبيرة (السيرفر الرئيسي للفرع)",
-  "changelog": "v1.4.7 — مراجعة البيانات v في رد /api/net/exec و /api/net/tx (commit): هاتف v1.0.5 يضبط مرآته على رقم المراجعة مباشرة بعد كتاباته فلا يستقصي لقطة كاملة عبثاً بعد كل عملية (رحلة رسالة صغيرة لكل كتابة بدل لقطة كاملة بعد كل معاملة). تغيير خلفي واحد صغير بلا أي تغيير سلوكي آخر — التوافق للخلف كامل مع كل إصدارات الهاتف والمحطات الأقدم.",
+  "changelog": "v1.4.8 — عقد «عدم التكرار وعدم الإسقاط» للهاتف v1.0.6+: /api/net/apply — دفعة كتابة كاملة (حتى ٤٠٠ عبارة) بمعرّف إعذار UUID في طلب واحد: معاملة PG واحدة على اتصال التنفيذ المتسلسل وقيد الإعذار داخل معاملة البيانات نفسها — إعادة الإرسال (ضاع الرد فوق النفق) ترجع بالنتيجة المسجلة بصفر تنفيذ مكرر، والفشل يتراجع كاملاً فلا نصف دفعة يثبت ولا يُحرق الإعذار على فشل. دفتر netappliedbatches سجل خادم داخلي مخفي عن لقطة الهاتف واللوحة بتنظيف بعد ١٤ يوماً. إصلاح LASTVAL بعد الإدماج (نقطة إنقاذ SAVEPOINT) والمعرّف بمعلومية صاحبه. الهواتف الأقدم (v1.0.5-) بمسارات exec/tx كما هي — توافق كامل. ٣٧ فحصاً ناجحاً.",
   "setup": {
     "url": "https://github.com/spos-systems/downloads-pos-server-platform/releases/latest/download/SPOS-Solah-Enterprise-Setup.sh",
-    "sha256": "fef11e191cc1da786d5ba222d31bf7e37de4d231551e865733520eb1ed044099",
-    "size_mb": 1.31
+    "sha256": "edd44ed714b60bdc868bf9c6eafa141ac5c6336ab2357eaabd7de827686c1536",
+    "size_mb": 1.3
   },
   "install": {
     "url": "https://github.com/spos-systems/downloads-pos-server-platform/releases/latest/download/SPOS-Solah-Enterprise-Install.sh",
