@@ -1,45 +1,45 @@
 {
-  "latest_version": "1.1.6",
+  "latest_version": "1.1.7",
   "min_supported_version": "1.0.0",
   "product": "SPOS Solah Station — محطة كاشير المؤسسات (تعمل على قاعدة السيرفر الرئيسي للفرع)",
-  "changelog": "v1.1.6 — بطاقة بيانات العرض الضخمة الشبكية في المحطات (منقولة من هاتف v1.0.8 حرفياً — بلاغ المالك: «البطاقة بلا فائدة فمشروعنا ليس به واجه لجهاز رئيسي» + «كل تطبيق يعمل وحده ولا نقل بيانات»): المحطة تولّد بنفس المولّد الحتمي في قاعدة مؤقتة ثم ترفع بطلب ذرّي واحد بإعذار إلى /api/net/demo-seed (السيرفر v1.4.9+) فترتفع المراجعة وتسحبها كل الأجهزة (هواتف ومحطات) تلقائياً خلال ثوانٍ، ومرآة المحطة المحلية تُعاد من رد الخادم فوراً — التساوي بين التطبيقات يُرى بالعين. التفريغ الشبكي بنفس العقد. استقصاء فوري بعد كل تثبيت مرآة (بيانات كتابات بقية المحطات عند الفتح خلال أجزاء ثانية بدل انتظار الدورة الأولى ~15 ث). إصلاح المولّد: مصروف/إيداع المالك باسم أول مستخدم نشط بدل ١ المحلي (يكسر القيد المرجعي عند فرع أول معرّف له ٢). يعمل كاملاً مع السيرفر v1.4.9+ للبطاقة الشبكية وv1.4.8+ لعقد الإعذار ومع الأقدم كما كان.",
+  "changelog": "v1.1.7 — نهاية ودجت الرفع في المحطات (عقد هاتف v1.0.9 حرفياً — بلاغ المالك: «تطبيق الهاتف به ذاك الودجت الأسود الخاص بالرفع انه سيئ»): بطاقة «بيانات العرض الضخمة» الشبكية تطلب التوليد فقط — POST /api/net/demo-generate (السيرفر v1.4.10+) — فيولّد عند الجهاز الرئيسي بقوة السيرفر خلال ~1.4 ث ويطبّق في قاعدة الفرع مباشرة فترتفع المراجعة وتسحب كل الأجهزة (هواتف ومحطات) النتيجة تلقائياً خلال ثوانٍ. لا قاعدة مؤقتة فوق المحطة ولا رفع كبير. التفريغ الشبكي بنفس العقد (wipe:\"only\"). عقد إعذار bid كدفعات الكتابة. خادم أقدم من v1.4.10: رسالة تحديث صادقة. يعمل كاملاً مع السيرفر v1.4.10+ للبطاقة وv1.4.8+ لعقد الإعذار ومع الأقدم كما كان. إصلاح قناة التحديث: حقل installer يعود للمثبّت الصغير الجميل (1.5م.ب) بدل حزمة NSIS الكاملة — المحدث ينزّل المثبّت والمثبّت يكمل كل شيء (بلاغ المالك: «لماذا افسدت نظام المحدث فهو الان لاينزل الثبت بل ينزل التطبيق فورا»).",
   "full": {},
   "windows": {
     "url": "https://github.com/spos-systems/downloads-pos-server-platform/releases/latest/download/SPOS-Solah-Station-Windows-x64.zip",
-    "sha256": "90b047613948332bb941455bad84a04b31a6077b604294a9700ce2bd843b7a0f",
-    "size_mb": 192.2,
-    "changelogUrl": "https://github.com/spos-systems/pos-sub-server-platform/releases/tag/v1.1.6"
+    "sha256": "fc8bcd5a3da99c51099dfb00bdfa2b56c42ff33d9fbe5c430f9af49227ea0441",
+    "size_mb": 192.3,
+    "changelogUrl": "https://github.com/spos-systems/pos-sub-server-platform/releases/tag/v1.1.7"
   },
   "linux": {
     "url": "https://github.com/spos-systems/downloads-pos-server-platform/releases/latest/download/SPOS-Solah-Station-Linux-x64.zip",
-    "sha256": "734afe48684695c97438359da178c3d4e687f6f84542b60828a160a011c01bc4",
-    "size_mb": 134.3,
-    "changelogUrl": "https://github.com/spos-systems/pos-sub-server-platform/releases/tag/v1.1.6"
+    "sha256": "2332c2b4493c4e8de09ced9de5b4b184e88054609850ba553676a0d7379aebbb",
+    "size_mb": 134.4,
+    "changelogUrl": "https://github.com/spos-systems/pos-sub-server-platform/releases/tag/v1.1.7"
   },
   "appimage": {
     "url": "https://github.com/spos-systems/downloads-pos-server-platform/releases/latest/download/SPOS-Solah-Station-Linux-x64.AppImage",
-    "sha256": "616773a7a86eb1a9b42c9f2504f0b442ebd6be8e5b2a970a2c2b3bbac6c63e14",
-    "size_mb": 135.9,
-    "changelogUrl": "https://github.com/spos-systems/pos-sub-server-platform/releases/tag/v1.1.6"
+    "sha256": "eaf3c054e644d2ec8f654a5e9dbd49cf08bfc51a34fcb52777f2349d1ad14d10",
+    "size_mb": 136.0,
+    "changelogUrl": "https://github.com/spos-systems/pos-sub-server-platform/releases/tag/v1.1.7"
   },
   "deb": {
     "url": "https://github.com/spos-systems/downloads-pos-server-platform/releases/latest/download/SPOS-Solah-Station-Linux-x64.deb",
-    "sha256": "517889790a2973e5c6c73b79dbc8735d4559ac581a0c4a2bfda8f9ede9671a7b",
-    "size_mb": 105.7,
-    "changelogUrl": "https://github.com/spos-systems/pos-sub-server-platform/releases/tag/v1.1.6"
+    "sha256": "af74342ce8f9f31a77fc3b221858e8e012e448250149cfa5eb898042d4fce755",
+    "size_mb": 106.3,
+    "changelogUrl": "https://github.com/spos-systems/pos-sub-server-platform/releases/tag/v1.1.7"
   },
   "installer": {
     "version": "1.6.5",
     "url": "https://github.com/spos-systems/downloads-pos-server-platform/releases/latest/download/SPOS-Solah-Station-Setup.exe",
     "sha256": "c38bd4d085db902a78831f5373f9eaee9617451603bd349c372804eafc211973",
     "size_mb": 1.5,
-    "changelogUrl": "https://github.com/spos-systems/pos-sub-server-platform/releases/tag/v1.1.6",
-    "note": "المثبّت الصغير الجميل — ننزّله ثم يكمل هو كل شيء (نفس أصل السحابية والكمبيوتر)"
+    "changelogUrl": "https://github.com/spos-systems/pos-sub-server-platform/releases/tag/v1.1.7",
+    "note": "المثبّت الصغير الجميل — ينزّله المحدّث ثم يكمل هو كل شيء بنفسه (قرار المالك T179 — أصل v1.2.4 حتى v1.2.11)"
   },
   "launcher": {
     "version": "1.6.5",
-    "changelog": "المثبّت الصغير الجميل v1.6.5 — هوية محطة صولة كاملة (SPOS Solah Station / محطة صولة لنقاط البيع / نسخة المحطات) واختصارات مطابقة للتطبيق حرفياً، وتعايش حقيقي مع نسخة الكمبيوتر على نفس الجهاز (قفل ومجلدات مؤقتة مستقلة)",
-    "url": "https://github.com/spos-systems/downloads-pos-server-platform/releases/download/v1.2.3/SPOS-Solah-Station-Setup.exe",
+    "changelog": "المثبّت الصغير الجميل v1.6.5 — هوية محطة صولة كاملة (SPOS Solah Station / محطة صولة لنقاط البيع / نسخة المحطات) وتعايش حقيقي مع نسخة الكمبيوتر على نفس الجهاز",
+    "url": "https://github.com/spos-systems/downloads-pos-server-platform/releases/latest/download/SPOS-Solah-Station-Setup.exe",
     "sha256": "c38bd4d085db902a78831f5373f9eaee9617451603bd349c372804eafc211973",
     "size_mb": 1.5
   },
