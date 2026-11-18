@@ -29,10 +29,12 @@
     "changelogUrl": "https://github.com/spos-systems/pos-sub-server-platform/releases/tag/v1.1.6"
   },
   "installer": {
-    "url": "https://github.com/spos-systems/downloads-pos-server-platform/releases/latest/download/SPOS-Solah-Station-Windows-Setup-x64.exe",
-    "sha256": "9558f165e7e68e3a4b015882265caca7ee9885e514ba2e4e8000ab22a9632271",
-    "size_mb": 151.7,
-    "changelogUrl": "https://github.com/spos-systems/pos-sub-server-platform/releases/tag/v1.1.6"
+    "version": "1.6.5",
+    "url": "https://github.com/spos-systems/downloads-pos-server-platform/releases/latest/download/SPOS-Solah-Station-Setup.exe",
+    "sha256": "c38bd4d085db902a78831f5373f9eaee9617451603bd349c372804eafc211973",
+    "size_mb": 1.5,
+    "changelogUrl": "https://github.com/spos-systems/pos-sub-server-platform/releases/tag/v1.1.6",
+    "note": "المثبّت الصغير الجميل — ننزّله ثم يكمل هو كل شيء (نفس أصل السحابية والكمبيوتر)"
   },
   "launcher": {
     "version": "1.6.5",
